@@ -1,3 +1,4 @@
+//nome das variaveis para manipular
 var mouseEvent = "empty";
 var lastPositionX, lastPositionY;
 
@@ -16,14 +17,15 @@ var lastPositionX, lastPositionY;
 
         mouseEvent = "mouseDown";
     }
-
+// 1 complete o codigo 
     canvas.addEventListener("mousemove", myMouseMove);
     function myMouseMove(e)
     {
-        PositionMouseX = e.clientX - canvas.offsetLeft;
+        //posição  x
+        
         PositionMouseY = e.clientY - canvas.offsetTop;
-
-        if (mouseEvent == "mouseDown") {
+   // 2 se a codição for verdadeira a mouseDown, vai desenhar
+        if (mouseEvent == "") {
         ctx.beginPath();
         ctx.strokeStyle = color;
         ctx.lineWidth = widthLine;
@@ -37,21 +39,24 @@ var lastPositionX, lastPositionY;
         ctx.lineTo(PositionMouseX, PositionMouseY);
         ctx.stroke();
         }
-
-        lastPositionX = PositionMouseX; 
-        lastPositionY = PositionMouseY;
+  // 3 atualize a  lastPositionX = PositionMouseX  e lastPositionY = PositionMouseY
+        
+        
     }
 
     canvas.addEventListener("mouseup", myMouseUp);
+ //4nomeie dentro da função myMouse(e)  
+ //4  mouseEvent = "mouseUP";
     function myMouseUp(e)
     {
-        mouseEvent = "mouseUP";
+       
     }
 
     canvas.addEventListener("mouseleave", myMouseLeave);
+//5 nomeie mouseleave
     function myMouseLeave(e)
     {
-        mouseEvent = "mouseleave";
+        mouseEvent = "";
     }
 
 
